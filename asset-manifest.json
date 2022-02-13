@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7ae15a96.css",
+    "main.js": "/static/js/main.84bfeaa3.js",
+    "static/js/787.5deea8b0.chunk.js": "/static/js/787.5deea8b0.chunk.js",
+    "static/media/pik-day.jpg": "/static/media/pik-day.23ec6ab6f3ab969845bd.jpg",
+    "static/media/pik-night.jpg": "/static/media/pik-night.329151c4575416cddebd.jpg",
+    "index.html": "/index.html",
+    "main.7ae15a96.css.map": "/static/css/main.7ae15a96.css.map",
+    "main.84bfeaa3.js.map": "/static/js/main.84bfeaa3.js.map",
+    "787.5deea8b0.chunk.js.map": "/static/js/787.5deea8b0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ae15a96.css",
+    "static/js/main.84bfeaa3.js"
+  ]
+}
