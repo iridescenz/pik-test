@@ -128,6 +128,11 @@ export const Button = styled.input.attrs({ type: 'submit' })`
   cursor: pointer;
   text-align: center;
   outline: none;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
 `;
 
 export const Disclaimer = styled.div`

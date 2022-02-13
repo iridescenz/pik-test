@@ -51,3 +51,4 @@ export const flatCases = (num) => {
   }
   return `Забронировать ${num} помещений`;
 };
+

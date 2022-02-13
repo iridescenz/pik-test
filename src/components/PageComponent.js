@@ -34,6 +34,11 @@ export const PageComponent = () => {
       time,
     },
   };
+
+  const isDisabled  = () => {
+    return (firstName && lastName && mail && phone && flatsCount) > 0 ? false : true
+  }
+ console.log(isDisabled())
   return (
     <>
       <Content img={timeBasedBackground()}>
@@ -86,6 +91,7 @@ export const PageComponent = () => {
             </Item>
             <Button
               onClick={() => setTime(Date.now())}
+              disabled={isDisabled()}
               value={
                 flatsCount && !Number.isNaN(+flatsCount) && flatsCount > 0
                   ? `${flatCases(Number(flatsCount))}`
