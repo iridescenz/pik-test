@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   Form,
   Input,
@@ -9,13 +9,18 @@ import {
   Content,
   FormHeader,
   SubHeader,
+  Label,
+  Item,
 } from '../style/ui/index';
-import {
-  timeBasedBackground,
-   greeting 
-} from '../helpers/index';
+import { timeBasedBackground, greeting } from '../helpers/index';
+ 
+
 
 export const PageComponent = () => {
+  const [surname, setSurname] = useState('')
+  const [name, setName] = useState('')
+
+  console.log(surname)
   return (
     <>
       <Content img={timeBasedBackground()}>
@@ -24,12 +29,27 @@ export const PageComponent = () => {
           <SubHeader>Для бронирования помещений заполните форму</SubHeader>
           <UserForm>
             <NameForm>
-              <Input size="sm" placeholder="Ваше имя" />
-              <Input size="sm" placeholder="Ваша фамилия" />
+              <Item>
+                <Input size="sm" placeholder="Ваше имя" />
+                <Label>Ваше имя </Label>
+              </Item>
+              <Item>
+                <Input size="sm" placeholder="Ваша фамилия" value={surname} onChange={(e) => setSurname(e.target.value)}/>
+                <Label>Ваша фамилия</Label>
+              </Item>
             </NameForm>
-            <Input placeholder="Телефон" />
-            <Input placeholder="E-mail" />
-            <Input placeholder="Количество помещений" />
+            <Item>
+              <Input placeholder="Телефон" />
+              <Label>Телефон </Label>
+            </Item>
+            <Item>
+              <Input placeholder="E-mail " />
+              <Label>E-mail </Label>
+            </Item>
+            <Item>
+              <Input placeholder="Количество помещений " />
+              <Label>Количество помещений</Label>
+            </Item>
             <Button>Забронировать 8 помещений</Button>
             <Disclaimer>Это дисклеймер, который есть во всех формах</Disclaimer>
           </UserForm>

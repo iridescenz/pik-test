@@ -48,37 +48,73 @@ export const NameForm = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  gap: 2rem;
-  margin-bottom: 1.5rem;
 
   > input {
     margin-bottom: 0;
   }
+  > div:nth-of-type(2n) {
+    margin-left: 2rem;
+  }
+`;
+
+export const Item = styled.div`
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+`
+
+export const Label = styled.div`
+  position: absolute;
+  pointer-events: none;
+  left: 1rem;
+  right: 1rem;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 3.5rem;
+  transition: .3s;
+  color: #4d4d4d;
+
+
 `;
 
 export const Input = styled.input`
   padding: 1rem;
-  color: #4d4d4d;
-  background: #f2f4f7;
+  color: #4D4D4D;
+  background: #F2F4F7;
   border: none;
   border-radius: 3px;
   width: ${(props) => (props.size === 'sm' ? '12.5rem' : '100%')};
   height: 3.5rem;
-  border: 1px solid #dcdce6;
+  border: 1px solid #DCDCE6;
   margin-bottom: 1.5rem;
 
-  ::placeholder {
-    color: ##4d4d4d;
-  }
   :focus {
     outline: none;
     background-color: white;
   }
+
+  &:focus ~ ${Label},
+  &:not(:focus):valid ~ ${Label} & {
+  top: -1rem;
+  font-size: 0.7rem;
+  color: #969BA5;
+}
+&:not(:placeholder-shown) ~ ${Label} {
+  top: -1rem;
+  font-size: 0.7rem;
+  color: #969BA5;
+}
+
+::placeholder {
+  opacity: 0;
+}
 `;
 
 export const Button = styled.button`
   font-size: 1em;
   line-height: 1.25rem;
+  font-weight: 600;
   padding: 1.125em 3.125em;
   border-radius: 4px;
   width: 100%;
@@ -96,3 +132,5 @@ export const Disclaimer = styled.div`
   line-height: 1rem;
   text-align: center;
 `;
+
+
