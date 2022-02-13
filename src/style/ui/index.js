@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Form = styled.div`
+export const Form = styled.form`
   width: 34rem;
   height: 40.5rem;
   background: #ffffff;
@@ -111,7 +111,7 @@ export const Input = styled.input`
 }
 `;
 
-export const Button = styled.button`
+export const Button = styled.input.attrs({ type: 'submit' })`
   font-size: 1em;
   line-height: 1.25rem;
   font-weight: 600;

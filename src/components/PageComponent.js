@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   Form,
   Input,
@@ -12,45 +12,81 @@ import {
   Label,
   Item,
 } from '../style/ui/index';
-import { timeBasedBackground, greeting } from '../helpers/index';
- 
-
+import { timeBasedBackground, flatCases, greeting } from '../helpers/index';
 
 export const PageComponent = () => {
-  const [surname, setSurname] = useState('')
-  const [name, setName] = useState('')
+  const [lastName, setLastName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [mail, setMail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [flatsCount, setFlatsCount] = useState('');
+  const [time, setTime] = useState('');
 
-  console.log(surname)
+  const orderInfo = {
+    user: {
+      firstName,
+      lastName,
+      mail,
+      phone,
+    },
+    order: {
+      flatsCount,
+      time,
+    },
+  };
   return (
     <>
       <Content img={timeBasedBackground()}>
-        <Form>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log(orderInfo);
+          }}
+        >
           <FormHeader>{greeting()}</FormHeader>
           <SubHeader>Для бронирования помещений заполните форму</SubHeader>
           <UserForm>
             <NameForm>
               <Item>
-                <Input size="sm" placeholder="Ваше имя" />
+                <Input
+                  size="sm"
+                  placeholder="Ваше имя"
+                  onChange={(e) => setFirstName(e.target.value)}
+                />
                 <Label>Ваше имя </Label>
               </Item>
               <Item>
-                <Input size="sm" placeholder="Ваша фамилия" value={surname} onChange={(e) => setSurname(e.target.value)}/>
+                <Input
+                  size="sm"
+                  placeholder="Ваша фамилия"
+                  onChange={(e) => setLastName(e.target.value)}
+                />
                 <Label>Ваша фамилия</Label>
               </Item>
             </NameForm>
             <Item>
-              <Input placeholder="Телефон" />
+              <Input placeholder="Телефон" onChange={(e) => setPhone(e.target.value)} />
               <Label>Телефон </Label>
             </Item>
             <Item>
-              <Input placeholder="E-mail " />
+              <Input placeholder="E-mail" onChange={(e) => setMail(e.target.value)} />
               <Label>E-mail </Label>
             </Item>
             <Item>
-              <Input placeholder="Количество помещений " />
+              <Input
+                placeholder="Количество помещений"
+                onChange={(e) => setFlatsCount(e.target.value)}
+              />
               <Label>Количество помещений</Label>
             </Item>
-            <Button>Забронировать 8 помещений</Button>
+            <Button
+              onClick={() => setTime(Date.now())}
+              value={
+                flatsCount && !Number.isNaN(+flatsCount)
+                  ? `${flatCases(Number(flatsCount))}`
+                  : 'Забронировать помещения'
+              }
+            />
             <Disclaimer>Это дисклеймер, который есть во всех формах</Disclaimer>
           </UserForm>
         </Form>
