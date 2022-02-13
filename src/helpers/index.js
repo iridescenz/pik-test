@@ -41,14 +41,13 @@ export const greeting = () => {
 
 export const flatCases = (num) => {
   if (num === 1) {
-    return `Забронировать ${num} помещение`
+    return `Забронировать ${num} помещение`;
   }
   if (num > 1 && num < 5) {
-    return `Забронировать ${num} помещения`
+    return `Забронировать ${num} помещения`;
   }
   if (num > 5) {
-    return `Забронировать ${num} помещений`
+    return `Забронировать ${num} помещений`;
   }
-  return `Забронировать ${num} помещений`
-}
-
+  return `Забронировать ${num} помещений`;
+};

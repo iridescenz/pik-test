@@ -74,15 +74,20 @@ export const PageComponent = () => {
             </Item>
             <Item>
               <Input
+                type="number"
                 placeholder="Количество помещений"
                 onChange={(e) => setFlatsCount(e.target.value)}
               />
-              <Label>Количество помещений</Label>
+              <Label>
+                {!flatsCount || flatsCount > 0
+                  ? 'Количество помещений'
+                  : 'Введите корректное число'}
+              </Label>
             </Item>
             <Button
               onClick={() => setTime(Date.now())}
               value={
-                flatsCount && !Number.isNaN(+flatsCount)
+                flatsCount && !Number.isNaN(+flatsCount) && flatsCount > 0
                   ? `${flatCases(Number(flatsCount))}`
                   : 'Забронировать помещения'
               }

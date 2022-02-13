@@ -61,7 +61,7 @@ export const Item = styled.div`
   display: inline-block;
   vertical-align: top;
   position: relative;
-`
+`;
 
 export const Label = styled.div`
   position: absolute;
@@ -72,21 +72,21 @@ export const Label = styled.div`
   white-space: nowrap;
   overflow: hidden;
   line-height: 3.5rem;
-  transition: .3s;
+  transition: 0.3s;
   color: #4d4d4d;
-
-
 `;
 
 export const Input = styled.input`
   padding: 1rem;
-  color: #4D4D4D;
-  background: #F2F4F7;
+  color: #4d4d4d;
+  background: #f2f4f7;
+  font-size: 1rem;
+  line-height: 1.5rem;
   border: none;
   border-radius: 3px;
   width: ${(props) => (props.size === 'sm' ? '12.5rem' : '100%')};
   height: 3.5rem;
-  border: 1px solid #DCDCE6;
+  border: 1px solid #dcdce6;
   margin-bottom: 1.5rem;
 
   :focus {
@@ -94,21 +94,25 @@ export const Input = styled.input`
     background-color: white;
   }
 
-  &:focus ~ ${Label},
-  &:not(:focus):valid ~ ${Label} & {
-  top: -1rem;
-  font-size: 0.7rem;
-  color: #969BA5;
-}
-&:not(:placeholder-shown) ~ ${Label} {
-  top: -1rem;
-  font-size: 0.7rem;
-  color: #969BA5;
-}
+  &:focus ~ ${Label}, &:not(:focus):valid ~ ${Label} & {
+    top: -1rem;
+    font-size: 0.7rem;
+    color: #969ba5;
+  }
+  &:not(:placeholder-shown) ~ ${Label} {
+    top: -1rem;
+    font-size: 0.7rem;
+    color: #969ba5;
+  }
 
-::placeholder {
-  opacity: 0;
-}
+  ::placeholder {
+    opacity: 0;
+  }
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `;
 
 export const Button = styled.input.attrs({ type: 'submit' })`
@@ -122,6 +126,8 @@ export const Button = styled.input.attrs({ type: 'submit' })`
   background-color: #ff4114;
   border: 1px solid #ff4114;
   cursor: pointer;
+  text-align: center;
+  outline: none;
 `;
 
 export const Disclaimer = styled.div`
@@ -132,5 +138,3 @@ export const Disclaimer = styled.div`
   line-height: 1rem;
   text-align: center;
 `;
-
-
