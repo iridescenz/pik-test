@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/pik-test/static/css/main.05a20ab6.css",
-    "main.js": "/pik-test/static/js/main.8de9447d.js",
+    "main.js": "/pik-test/static/js/main.a066568f.js",
     "static/js/787.5deea8b0.chunk.js": "/pik-test/static/js/787.5deea8b0.chunk.js",
     "static/media/pik-day.jpg": "/pik-test/static/media/pik-day.23ec6ab6f3ab969845bd.jpg",
     "static/media/pik-night.jpg": "/pik-test/static/media/pik-night.329151c4575416cddebd.jpg",
     "index.html": "/pik-test/index.html",
     "main.05a20ab6.css.map": "/pik-test/static/css/main.05a20ab6.css.map",
-    "main.8de9447d.js.map": "/pik-test/static/js/main.8de9447d.js.map",
+    "main.a066568f.js.map": "/pik-test/static/js/main.a066568f.js.map",
     "787.5deea8b0.chunk.js.map": "/pik-test/static/js/787.5deea8b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.05a20ab6.css",
-    "static/js/main.8de9447d.js"
+    "static/js/main.a066568f.js"
   ]
 }
