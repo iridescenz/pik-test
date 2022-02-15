@@ -40,13 +40,15 @@ export const greeting = () => {
 };
 
 export const flatCases = (num) => {
-  if (num === 1) {
+  const lastNum = num.toString().split('').reverse()[0]
+
+  if (lastNum == 1) {
     return `Забронировать ${num} помещение`;
   }
-  if (num > 1 && num < 5) {
+  if (lastNum > 1 && lastNum < 5) {
     return `Забронировать ${num} помещения`;
   }
-  if (num > 5) {
+  if (lastNum > 5) {
     return `Забронировать ${num} помещений`;
   }
   return `Забронировать ${num} помещений`;
