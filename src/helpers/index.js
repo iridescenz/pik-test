@@ -41,7 +41,9 @@ export const greeting = () => {
 
 export const flatCases = (num) => {
   const lastNum = num.toString().split('').reverse()[0]
-
+  if (num > 10 && num <= 20 ) {
+    return `Забронировать ${num} помещений`;
+  }
   if (lastNum == 1) {
     return `Забронировать ${num} помещение`;
   }
